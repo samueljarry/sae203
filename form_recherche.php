@@ -13,7 +13,11 @@
 <form action="form_recherche.php" data-parsley-validate>
     <div id="search">
         <label for="nom-article"></label>
-        <input type="text" id="nom-article" name="nom-article" placeholder="Nom de l'article">
+        <input type="search" autocomplete="off" list="nom-article" id="nom-article" name="nom-article" placeholder="Nom de l'article"/>
+        <datalist id="nom-article">
+            <option value="Test">
+        </datalist>
+
     </div>
 
     <div id="prix">
@@ -39,6 +43,10 @@
             <input type="checkbox" id="rouge" class="color">
 
             <input type="checkbox" id="vert" class="color">
+
+            <input type="checkbox" id="navy" class="color">
+
+            <input type="checkbox" id="navy" class="color">
 
             <input type="checkbox" id="navy" class="color">
 

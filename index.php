@@ -2,4 +2,5 @@
     require('header.php')
 ?>
 
-<div class="background"></div>
+
+    <div class="background"></div>
