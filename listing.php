@@ -3,46 +3,36 @@
 ?>
 
 <body>
-<main>
-<div class="table-wrapper">
-    <table class="fl-table">
-        <thead>
-        <tr>
-            <th>Photo</th>
-            <th>Nom</th>
-            <th>Prix</th>
-            <th>Catégorie</th>
-            <th>Couleur</th>
-            <th>Tailles</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td><img src="images/id1.png"></td>
-            <td>Veiled Puffer</td>
-            <td>170€</td>
-            <td>Veste</td>
-            <td><img src="couleurs/noir.jpg"></td>
-            <td>XS S M L</td>
-            
-        </tr>
-        <tr>
-            <td><img src="images/id2.jpg"></td>
-            <td>Veiled Puffer</td>
-            <td>170€</td>
-            <td>Veste</td>
-            <td><img src="couleurs/beige.jpg"></td>
-            <td>XS S M L</td>
-        </tr>
-        <tr>
-        <td><img src="images/id3.jpg"></td>
-            <td>Soldier Jacket</td>
-            <td>170€</td>
-            <td>Veste</td>
-            <td><img src="couleurs/beige.jpg"></td>
-            <td>XS S M L</td>
-        </tr>
-        </tbody>
-    </table>
+<main id="listing">
+    <!--
+    <div class="article">
+            <img src="images/id1.jpg">
+            <div class="infos">
+                <p> Veiled Puffer Jacket </p>
+                <h3>170€</h3>
+                <img src=couleurs/noir.jpg>
+            </div>
+    </div>
+-->
+
+
+<?php
+$mabd = new PDO('mysql:host=localhost;dbname=sae203;charset=UTF8;', 'sae203', '123');
+$mabd->query('SET NAMES utf8;');
+$req = "SELECT * FROM sae_articles INNER JOIN sae_marques ON sae_articles._marque_id = sae_marques.marque_id";
+$resultat = $mabd->query($req);
+foreach ($resultat as $value) {
+    echo '<div class="article">'; 
+    echo '<img src="'.$value['article_photo'].'">';
+    echo '<div class="infos">';
+    echo '<p>'.$value['article_nom'];
+    echo '<h3>'.$value['article_prix'].'€</h3>';
+    echo '<img src="'.$value['article_couleur'].'">';
+    echo '<div class="article_hover">';
+    echo '<p>Marque : '.$value['marque_nom'].'</p>';
+    echo '</div></div></div>';
+  }
+?>
+
 </main>
 </body>
