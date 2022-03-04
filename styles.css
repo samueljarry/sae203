@@ -555,12 +555,12 @@ and (min-width : 1224px) {
       }
 
     #sidebar a {
-        color:white;
+        color:black;
         font-size: 2rem;
     }
 
     #sidebar.active a {
-        color:white;
+        color:black;
         font-size: 2rem;
         animation: sidebar2 1.5s ease 0s 1 normal forwards;
         font-family: Bely-display;

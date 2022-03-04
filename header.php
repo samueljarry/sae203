@@ -25,7 +25,7 @@
         <ul>
             <li><a href="index.php">Accueil</a></li>
             <li><a href="listing.php">Nos produits</a></li>
-            <li><a href="#">Page 3</a></li>
+            <li><a href="form_recherche.php">Recherche</a></li>
         </ul>
     </div>
     <div id="navbar">
