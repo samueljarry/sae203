@@ -407,6 +407,26 @@ label {
     background-image: url("couleurs/jaune.jpg");
 }
 
+.color:nth-child(6) {
+    background-image: url("couleurs/lilas.jpg");
+}
+
+.color:nth-child(7) {
+    background-image: url("couleurs/navy.jpg");
+}
+
+.color:nth-child(8) {
+    background-image: url("couleurs/noir.jpg");
+}
+
+.color:nth-child(9) {
+    background-image: url("couleurs/rouge.jpg");
+}
+
+.color:nth-child(10) {
+    background-image: url("couleurs/vert.jpg");
+}
+
 
 
 .color:checked {
