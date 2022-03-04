@@ -178,12 +178,20 @@ main {
 /* INDEX */
 
 #index h1 {
-    margin-top: 2vh;
+    margin-top: 0vh;
     font-family: Lust;
     margin-bottom: -13vh;
 }
 
+#index #listing {
+    height: 150vh;
+}
   
+#index a {
+        position: relative;
+        top: -6vh;
+        font-size: 2em;
+}
 /* Listing */
 
 .article {
@@ -657,7 +665,32 @@ and (min-width : 1224px) {
     }
 
     #index h1 {
-        margin-bottom: 0;
+        margin-top: 2vh;
+        margin-bottom: -1vh;
+    }
+
+    #index #listing {
+        height: 120vh;
+    }
+
+    #index button {
+        height: 6.5vh;
+        position: relative;
+        margin-top: -2vh;
+        background: white;
+        margin-bottom: 10vh;
+        border-radius: 0.5vw;
+        width: 11vw;
+        font-size: 1em;
+    }
+
+    #index a {
+        font-size: 1.2em;
+    }
+
+    #index a:hover {
+        color: #90d4a1;
+        transition: 0.3s;
     }
 
     /* LISTING */
@@ -732,8 +765,8 @@ and (min-width : 1224px) {
     .article:hover .article_hover {
         position: relative;
         top: -22vh;
-        left: -2vw;
-        width: 15vw;
+        left: 1vw;
+        width: 20vw;
     }
 
     .article:hover .article_hover p{
