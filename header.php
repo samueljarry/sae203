@@ -11,6 +11,7 @@
     <! –– POLICES ––>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/lve5zse.css">
+    <link rel="stylesheet" href="https://use.typekit.net/vby5cao.css">
 
 </head>
 <header>
