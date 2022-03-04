@@ -41,8 +41,8 @@ a:visited {
 
 #sidebar {
     position: fixed;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     width: 75vw;
     height: 100vh;
     display: flex;
@@ -61,7 +61,11 @@ a:visited {
     top: 0vh;
     left: 0vw;
     animation: sidebar 1s ease 0s 1 normal forwards;
-    background-color: black;
+    background-color: white;
+}
+
+#sidebar li a {
+    color: black;
 }
 
 
@@ -80,16 +84,17 @@ a:visited {
   }
 
 #sidebar a {
-    color:white;
+    color: black;
     font-size: 5rem;
 }
 
-#sidebar.active a {
-    color:white;
+#sidebar.active li a {
+    color: black;
     font-size: 5rem;
     animation: sidebar2 1.5s ease 0s 1 normal forwards;
     font-family: Lust;
 }
+
 
 #sidebar.active .btn {
     position: fixed;
@@ -98,7 +103,7 @@ a:visited {
 }
 
 #sidebar.active span {
-    background:white;
+    background: #90d4a1;
 }
 
 @keyframes sidebar2 {
@@ -295,6 +300,8 @@ and (min-width : 480px) {
     top: -2.5vh;
     width: auto;
 }
+
+
 
 /* PAGE RECHERCHE */
 
