@@ -202,14 +202,9 @@ main {
     z-index: 5;
     background: white;
     position: absolute;
-    right:1vw;
-    top: -28vh;
+    right:-17vw;
+    top: -18vh;
     animation: articlehover 0.3s cubic-bezier(0.11, 0, 0.5, 0) 0s 1 normal none;
-}
-
-.article:hover .infos {
-    top : -2vh;
-    transition: 0.2s;
 }
 
 @keyframes articlehover {
@@ -223,11 +218,11 @@ main {
   }
 
 .article:hover .article_hover p {
+    width: 44vw;
     height: auto;
     text-align: left;
     transition: 0.3s;
     position: relative;
-    width: 43vw;
 }
 
 @media only screen 
@@ -698,6 +693,12 @@ and (min-width : 1224px) {
     .article:hover .article_hover {
         position: relative;
         top: -22vh;
+        left: -2vw;
+        width: 15vw;
+    }
+
+    .article:hover .article_hover p{
+        margin-left: 1vw;
     }
 
     /* PAGE RECHERCHE */
