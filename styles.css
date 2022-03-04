@@ -223,11 +223,11 @@ main {
   }
 
 .article:hover .article_hover p {
-    width: auto;
     height: auto;
     text-align: left;
     transition: 0.3s;
     position: relative;
+    width: 43vw;
 }
 
 @media only screen 
