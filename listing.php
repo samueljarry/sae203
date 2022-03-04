@@ -41,5 +41,3 @@ foreach ($resultat as $value) {
 
 </main>
 </body>
-
-TEST
