@@ -22,12 +22,12 @@
 
     <div id="prix">
     <label for="prix_min"></label>
-    <input type="text" id="prix_min" name="prix_min" placeholder="Prix minimum" data-parsley-type="number">
+    <input type="number" id="prix_min" autocomplete="off" name="prix_min" placeholder="Prix minimum" data-parsley-type="number">
 
 
 
     <label for="prix_max"></label>
-    <input type="text" id="prix_max" name="prix_max" placeholder="Prix maximum" data-parsley-type="number">
+    <input type="number" id="prix_max" autocomplete="off" name="prix_max" placeholder="Prix maximum" data-parsley-type="number">
     </div>
 
     <div id="formcolor">
