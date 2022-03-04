@@ -207,6 +207,11 @@ main {
     animation: articlehover 0.3s cubic-bezier(0.11, 0, 0.5, 0) 0s 1 normal none;
 }
 
+.article:hover .infos {
+    top : -2vh;
+    transition: 0.2s;
+}
+
 @keyframes articlehover {
     0% {
       opacity: 0;
