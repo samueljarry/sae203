@@ -10,7 +10,7 @@
 
 <main>
 <div id="filtres">
-<form action="form_recherche.php" data-parsley-validate>
+<form action="reponse_recherche.php" method="post" data-parsley-validate>
     <div id="search">
         <label for="nom-article"></label>
         <input type="search" autocomplete="off" list="nom-article" id="nom-article" name="nom-article" placeholder="Nom de l'article"/>

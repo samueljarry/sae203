@@ -1,14 +1,41 @@
 <?php
-    if ( (empty($_POST['prenom'])) || (empty($_POST['age'])) ) {
-        header('Location: form2.php');
-    }
+    require('header.php')
+?>
 
-    $newstr = filter_var($_POST['prenom'],
-    FILTER_SANITIZE_STRING);
-     
-    echo $newstr;
-    $newstr = filter_var($_POST['age'],
-    FILTER_SANITIZE_STRING);
-     
-    echo $newstr;
-    ?>
+<main id="listing">
+
+<?php
+
+    $prixMin = $_POST['prix_min'];
+ 
+    $newstr = filter_var($_POST['nom-article'],
+    FILTER_SANITIZE_STRING); 
+
+    $prixMax = filter_var($_POST['prix_max'],
+    FILTER_SANITIZE_STRING); 
+
+
+    $mabd = new PDO('mysql:host=localhost;dbname=sae203;charset=UTF8;', 'sae203', '123');
+    $mabd->query('SET NAMES utf8;');
+    $req = "SELECT * FROM sae_articles INNER JOIN sae_marques ON sae_articles._marque_id = sae_marques.marque_id WHERE article_prix >= $prixMin AND article_prix <= $prixMax";
+    $resultat = $mabd->query($req);
+    foreach ($resultat as $value) {
+        echo '<div class="article">'; 
+        echo '<img src="'.$value['article_photo'].'">';
+        echo '<div class="infos">';
+        echo '<p>'.$value['article_nom'];
+        echo '<h3>'.$value['article_prix'].'€</h3>';
+        echo '<img src="'.$value['article_couleur'].'">';
+        echo '<div class="article_hover">';
+        echo '<p>Marque : '.$value['marque_nom'].'</p>';
+        echo '<p>Tailles disponible : '.$value['article_taille'].'</p>';
+        echo '<p>Catégorie : '.$value['article_categorie'].'</p>';
+        echo '<p>Informations sur la marque :</p>';
+        echo '<p>Provenance : '.$value['marque_nationalite'].'</p>';
+        echo '<p>Transporteur : '.$value['marque_transporteur'].'</p>';
+        echo '</div></div></div>';
+      }
+    
+?>
+
+</main>

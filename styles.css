@@ -585,6 +585,14 @@ and (min-width : 1224px) {
 
     #sidebar.active a {
         color:black;
+        font-size: 0rem;
+        animation: sidebar2 1.5s ease 0s 1 normal forwards;
+        font-family: Lust;
+        transition:0.3s;
+    }
+
+    #sidebar.active li a {
+        color:black;
         font-size: 2rem;
         animation: sidebar2 1.5s ease 0s 1 normal forwards;
         font-family: Lust;
