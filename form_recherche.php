@@ -33,10 +33,9 @@
     <div id="formcolor">
         <label for="couleur">Couleur :</label>
 
-        <div id="colorpicker">
+        <div id="colorpicker">            
             
-            
-            <input type="checkbox" id="noir" class="color">
+            <input type="checkbox" id="beige" class="color">
             
             <input type="checkbox" id="blanc" class="color">
 
@@ -111,7 +110,7 @@
 
     <input type="submit"></input>
 
-    </form>
+</form>
 </div>
 </main>
 
