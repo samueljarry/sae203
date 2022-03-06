@@ -10,7 +10,11 @@
     FILTER_SANITIZE_STRING);
  
     $nom = filter_var($_POST['nom-article'],
-    FILTER_SANITIZE_STRING); 
+    FILTER_SANITIZE_STRING);
+
+    $prixMin = 0;
+
+    $prixMax = 9000;
 
     $prixMax = filter_var($_POST['prix_max'],
     FILTER_SANITIZE_STRING); 
@@ -18,7 +22,7 @@
 
     $mabd = new PDO('mysql:host=localhost;dbname=sae203;charset=UTF8;', 'sae203', '123');
     $mabd->query('SET NAMES utf8;');
-    $req = "SELECT * FROM sae_articles INNER JOIN sae_marques ON sae_articles._marque_id = sae_marques.marque_id WHERE article_nom LIKE '%$nom%' AND article_prix >= $prixMin AND article_prix <= $prixMax";
+    $req = "SELECT * FROM sae_articles INNER JOIN sae_marques ON sae_articles._marque_id = sae_marques.marque_id WHERE article_nom LIKE '%$nom%' AND article_prix>='$prixMin' AND article_prix<='$prixMax' ";
     $resultat = $mabd->query($req);
     foreach ($resultat as $value) {
         echo '<div class="article">'; 
