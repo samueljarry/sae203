@@ -949,4 +949,14 @@ and (min-width : 1224px) {
         margin-bottom: 5vh;
     }
 
+    /* PAGE GESTION */
+
+    #gestion img{
+        width: 40px;
+    }
+
+    #gestion td {
+        font-size: 13px;
+    }
+
 }

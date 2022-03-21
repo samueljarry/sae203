@@ -74,4 +74,79 @@ function afficherCatalogue($mabd) {
 
 }
 
+// !!! AFFICHAGE LISTE POUR LA PAGE DE GESTION !!! //
+function afficherListe($mabd) {
+    $req = "SELECT * FROM sae_articles 
+            INNER JOIN sae_marques 
+            ON sae_articles._marque_id = sae_marques.marque_id";
+    try {
+        $resultat = $mabd->query($req);
+    } catch (PDOException $e) {
+        // s'il y a une erreur, on l'affiche
+        echo '<p>Erreur : ' . $e->getMessage() . '</p>';
+        die();
+    }
+    echo '<table>'."\n";
+    echo '<thead><tr><th>Photo</th><th>Nom</th><th>Prix (&euro;)</th><th>Catégorie</th><th>Taille</th><th>Couleur</th><th>Marque</th><th>Transporteur</th><th>Nationalité</th><th>Modifier</th><th>Supprimer</th></tr></thead>'."\n";
+    echo '<tbody>'."\n";
+    foreach ($resultat as $value) {
+        echo '<tr>'."\n";
+        echo '<td><img class="photo" src="../'.$value['article_photo'].'" alt="image_'.$value['article_id'].'" /></td>'."\n";
+        echo '<td>'.$value['article_nom'].'</td>'."\n";
+        echo '<td>'.$value['article_prix'].'</td>'."\n";
+        echo '<td>'.$value['article_categorie'].'</td>'."\n";
+        echo '<td>'.$value['article_taille'].'</td>'."\n";
+        echo '<td>'.$value['article_couleur'].'</td>'."\n";
+        echo '<td>'.$value['marque_nom'].'</td>'."\n";
+        echo '<td>'.$value['marque_transporteur'].'</td>'."\n";
+        echo '<td>'.$value['marque_nationalite'].'</td>'."\n";
+        echo '<td><a href="table1_update_form.php?num='.$value['article_id'].'">Modifier</a></td>'."\n";
+        echo '<td><a href="table1_delete.php?num='.$value['article_id'].'">Supprimer</a></td>'."\n";
+        echo '</tr>'."\n";
+    }
+    echo '</tbody>'."\n";
+    echo '</table>'."\n";
+}
+
+
+// !!!afficher les auteurs (prénom et nom) dans des champs "option"
+function afficherAuteursOptions($mabd) {
+    // on sélectionne tous les auteurs de la table auteurs
+    $req = "SELECT * FROM sae_marques";
+    try {
+        $resultat = $mabd->query($req);
+    } catch (PDOException $e) {
+        // s'il y a une erreur, on l'affiche
+        echo '<p>Erreur : ' . $e->getMessage() . '</p>';
+        die();
+    }
+    // pour chaque auteur, on met son id, son prénom et son nom 
+    // dans une balise <option>
+    foreach ($resultat as $value) {
+        echo '<option value="'.$value['marque_id'].'">'; // id de l'auteur
+        echo $value['marque_nom']; // prénom espace nom
+        echo '</option>'."\n";
+    }
+}
+
+    //!!! AJOUT ARTICLE DANS LA TABLE SAE_ARTICLES !!!//
+    function ajouterBD($mabd, $titre, $annee, $prix, $nouvelleImage, $nbPages, $resume, $auteur)
+    {
+        $req = 'INSERT INTO sae_articles (article_photo, article_nom, article_prix, article_couleur, article_taille, _marque_id) VALUES (???)';
+        echo '<p>' . $req . '</p>' . "\n";
+        try {
+            $resultat = $mabd->query($req);
+        } catch (PDOException $e) {
+            // s'il y a une erreur, on l'affiche
+            echo '<p>Erreur : ' . $e->getMessage() . '</p>';
+            die();
+        }
+        if ($resultat->rowCount() == 1) {
+            echo '<p>La bande dessinée ' . $titre . ' a été ajoutée au catalogue.</p>' . "\n";
+        } else {
+            echo '<p>Erreur lors de l\'ajout.</p>' . "\n";
+            die();
+        }
+    }
+
 ?>
