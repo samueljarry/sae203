@@ -142,7 +142,7 @@ function afficherAuteursOptions($mabd) {
             die();
         }
         if ($resultat->rowCount() == 1) {
-            echo '<p>La bande dessinée ' . $titre . ' a été ajoutée au catalogue.</p>' . "\n";
+            echo '<p>La bande dessinée '.$titre.' a été ajoutée au catalogue.</p>' . "\n";
         } else {
             echo '<p>Erreur lors de l\'ajout.</p>' . "\n";
             die();
