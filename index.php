@@ -10,7 +10,10 @@
 
         <main id="listing">
         <?php
-$mabd = new PDO('mysql:host=localhost;dbname=sae203;charset=UTF8;', 'sae203', '123');
+
+        require 'secretxyz123.inc.php';
+
+$mabd = new PDO('mysql:host=localhost;dbname=sae203;charset=UTF8;', USER, PASSWORD);
 $mabd->query('SET NAMES utf8;');
 $req = "SELECT * FROM sae_articles INNER JOIN sae_marques ON sae_articles._marque_id = sae_marques.marque_id limit 8";
 $resultat = $mabd->query($req);
