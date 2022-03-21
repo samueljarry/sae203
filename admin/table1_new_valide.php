@@ -13,6 +13,7 @@
 	
 	        $nom=$_POST['nom'];
 	        $prix=$_POST['prix'];
+			$categorie=$_POST['categorie'];
 	        $couleur=$_POST['couleur'];
 	        $taille=$_POST['taille'];
 	        //$resume=trim($_POST['resume']);
@@ -43,7 +44,7 @@
 	        }
 	
 	        $co=connexionBD();
-	        ajouterBD($co, $nom, $prix, $nouvelleImage, $couleur, $taille, $marque);
+	        ajouterBD($co, $nom, $prix, $nouvelleImage, $couleur, $taille, $marque, $categorie);
 	        deconnexionBD($co);
 	    ?>
 	</body>

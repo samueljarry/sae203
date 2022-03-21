@@ -130,9 +130,11 @@ function afficherAuteursOptions($mabd) {
 }
 
     //!!! AJOUT ARTICLE DANS LA TABLE SAE_ARTICLES !!!//
-    function ajouterBD($mabd, $titre, $annee, $prix, $nouvelleImage, $nbPages, $resume, $auteur)
+    function ajouterBD($mabd, $nom, $prix, $nouvelleImage, $couleur, $taille, $marque, $categorie)
     {
-        $req = 'INSERT INTO sae_articles (article_photo, article_nom, article_prix, article_couleur, article_taille, _marque_id) VALUES (???)';
+        $req = 'INSERT INTO sae_articles (article_photo, article_nom, article_prix, article_couleur, article_taille, article_categorie, _marque_id) 
+        VALUES ("/img/bds/'.$nouvelleImage.'", "'.$nom.'", '.$prix.', "'.$couleur.'", "'.$taille.'", "'.$categorie.'", "'.$marque.'"
+        )';
         echo '<p>' . $req . '</p>' . "\n";
         try {
             $resultat = $mabd->query($req);
@@ -142,7 +144,7 @@ function afficherAuteursOptions($mabd) {
             die();
         }
         if ($resultat->rowCount() == 1) {
-            echo '<p>La bande dessinée '.$titre.' a été ajoutée au catalogue.</p>' . "\n";
+            echo "<p>L'article ".$nom." a été ajouté au catalogue.</p><br>'";
         } else {
             echo '<p>Erreur lors de l\'ajout.</p>' . "\n";
             die();

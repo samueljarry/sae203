@@ -6,11 +6,12 @@
 	<body style="font-family:sans-serif;">
 	    <a href="../index.php">Accueil</a> | <a href="admin.php">Gestion</a>
 	    <hr />
-	    <h1>Ajouter une bande dessinée</h1>
+	    <h1>Ajouter un article</h1>
 	    <hr />
 	    <form action="table1_new_valide.php" method="POST" enctype="multipart/form-data">
 	        Nom : <input type="text" name="nom" required /><br />
 	        Prix : <input type="number" name="prix" min="0.00" max="10000.00" required /><br />
+			Catégorie : <input type="text" name="categorie" required /><br />
 	        Couleur : <input type="text" name="couleur" placeholder="couleurs/[couleur].jpg" required /><br />
             Tailles disponibles : <input type="text" name="taille" required /><br />
 
