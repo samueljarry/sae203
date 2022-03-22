@@ -8,8 +8,8 @@
         <hr />
         <h1>Gestion des données</h1>
         <ul>
-            <li>Gestion des <a href="gestion_table1.php">albums</a></li>
-            <li>Gestion des <a href="gestion_table1.php">auteurs</a></li>
+            <li>Gestion des <a href="gestion_table1.php">Articles</a></li>
+            <li>Gestion des <a href="gestion_table2.php">Marques</a></li>
         </ul>
     </body>
 </html>

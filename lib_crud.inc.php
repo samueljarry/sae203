@@ -233,4 +233,119 @@ function afficherAuteursOptions($mabd) {
         }
     }
 
+
+
+
+
+
+    // !!! PAGES DE GESTION NUMERO 2 !!! //
+
+    function afficherListeM($mabd) {
+        $req = "SELECT * FROM sae_marques";
+        try {
+            $resultat = $mabd->query($req);
+        } catch (PDOException $e) {
+            // s'il y a une erreur, on l'affiche
+            echo '<p>Erreur : ' . $e->getMessage() . '</p>';
+            die();
+        }
+        echo '<table>'."\n";
+        echo '<thead><tr><th>Nom</th><th>Nationalité</th><th>Transporteur</th>'."\n";
+        echo '<tbody>'."\n";
+        foreach ($resultat as $value) {
+            echo '<tr>'."\n";
+            echo '<td>'.$value['marque_nom'].'</td>'."\n";
+            echo '<td>'.$value['marque_nationalite'].'</td>'."\n";
+            echo '<td>'.$value['marque_transporteur'].'</td>'."\n";
+            echo '<td><a href="table2_update_form.php?num='.$value['marque_id'].'">Modifier</a></td>'."\n";
+            echo '<td><a href="table2_delete.php?num='.$value['marque_id'].'">Supprimer</a></td>'."\n";
+            echo '</tr>'."\n";
+        }
+        echo '</tbody>'."\n";
+        echo '</table>'."\n";
+    }
+
+    // AJOUTER MARQUE //
+
+    function ajouterMarque($mabd, $nom, $nationalite, $transporteur)
+    {
+        $req = 'INSERT INTO sae_marques (marque_nom, marque_nationalite, marque_transporteur) 
+        VALUES ("'.$nom.'", "'.$nationalite.'", "'.$transporteur.'"
+        )';
+        // echo '<p>' . $req . '</p>' . "\n";
+        try {
+            $resultat = $mabd->query($req);
+        } catch (PDOException $e) {
+            // s'il y a une erreur, on l'affiche
+            echo '<p>Erreur : ' . $e->getMessage() . '</p>';
+            die();
+        }
+        if ($resultat->rowCount() == 1) {
+            echo "<p>L'article ".$nom." a été ajouté au catalogue.</p><br>'";
+        } else {
+            echo '<p>Erreur lors de l\'ajout.</p>' . "\n";
+            die();
+        }
+    }
+
+    // !!! EFFACEMENT D'UNE MARQUE !!! //
+    function effaceMarque($mabd, $id) {
+        $req = 'DELETE FROM sae_marques WHERE marque_id='.$id;
+        echo '<p>'.$req.'</p>'."\n";
+        try{
+            $resultat = $mabd->query($req);
+        } catch (PDOException $e) {
+            // s'il y a une erreur, on l'affiche
+            echo '<p>Erreur : ' . $e->getMessage() . '</p>';
+            die();
+        }
+        if ($resultat->rowCount()==1) {
+            echo '<p>La bande dessinée '.$id.' a été supprimée du catalogue.</p>'."\n";
+        } else {
+            echo '<p>Erreur lors de la suppression.</p>'."\n";
+            die();
+        }
+    }
+
+    // !!! RÉCUPÉRATION INFOS MARQUES !!! //
+    function getMarque($mabd, $idMarque) {
+        $req = 'SELECT * FROM sae_marques WHERE marque_id='.$idMarque;
+        echo '<p>getMarque() : '.$req.'</p>'."\n";
+        try {
+            $resultat = $mabd->query($req);
+        } catch (PDOException $e) {
+            // s'il y a une erreur, on l'affiche
+            echo '<p>Erreur : ' . $e->getMessage() . '</p>';
+            die();
+        }
+        // la fonction retourne le tableau associatif 
+        // contenant les champs et leurs valeurs
+        return $resultat->fetch();
+    }
+
+    function modifierMarque($mabd, $id, $nom, $nationalite, $transporteur)
+    {
+        $req = 'UPDATE sae_marques
+                SET 
+                    marque_nom="'.$nom.'", marque_nationalite="'.$nationalite.'", marque_transporteur="'.$transporteur.'"
+                WHERE marque_id='.$id;
+        echo '<p>' . $req . '</p>' . "\n";
+        try {
+            $resultat = $mabd->query($req);
+        } catch (PDOException $e) {
+            // s'il y a une erreur, on l'affiche
+            echo '<p>Erreur : ' . $e->getMessage() . '</p>';
+            die();
+        }
+        if ($resultat->rowCount() == 1) {
+            echo "<p>La marque ".$nom." a été modifié.</p><br>" ;
+        } else {
+            echo '<p>Erreur lors de la modification.</p>' . "\n";
+            die();
+        }
+    }
+
+
+
+   
 ?>
