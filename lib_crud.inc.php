@@ -1,7 +1,7 @@
 <?php
 
 
-//identifiants de connexion//
+//IDENTIFIANTS//
 require 'secretxyz123.inc.php';
 
 
@@ -133,7 +133,7 @@ function afficherAuteursOptions($mabd) {
     function ajouterBD($mabd, $nom, $prix, $nouvelleImage, $couleur, $taille, $marque, $categorie)
     {
         $req = 'INSERT INTO sae_articles (article_photo, article_nom, article_prix, article_couleur, article_taille, article_categorie, _marque_id) 
-        VALUES ("/img/bds/'.$nouvelleImage.'", "'.$nom.'", '.$prix.', "'.$couleur.'", "'.$taille.'", "'.$categorie.'", "'.$marque.'"
+        VALUES ("images/uploads/'.$nouvelleImage.'", "'.$nom.'", '.$prix.', "'.$couleur.'", "'.$taille.'", "'.$categorie.'", "'.$marque.'"
         )';
         // echo '<p>' . $req . '</p>' . "\n";
         try {
@@ -147,6 +147,88 @@ function afficherAuteursOptions($mabd) {
             echo "<p>L'article ".$nom." a été ajouté au catalogue.</p><br>'";
         } else {
             echo '<p>Erreur lors de l\'ajout.</p>' . "\n";
+            die();
+        }
+    }
+
+
+    // !!! EFFACEMENT D'UN ARTICLE !!! //
+    function effaceBD($mabd, $id) {
+        $req = 'DELETE FROM sae_articles WHERE article_id='.$id;
+        echo '<p>'.$req.'</p>'."\n";
+        try{
+            $resultat = $mabd->query($req);
+        } catch (PDOException $e) {
+            // s'il y a une erreur, on l'affiche
+            echo '<p>Erreur : ' . $e->getMessage() . '</p>';
+            die();
+        }
+        if ($resultat->rowCount()==1) {
+            echo '<p>La bande dessinée '.$id.' a été supprimée du catalogue.</p>'."\n";
+        } else {
+            echo '<p>Erreur lors de la suppression.</p>'."\n";
+            die();
+        }
+    }
+
+    // RÉCUPÉRATION DES INFOS D'UN ARTICLE
+    function getArticle($mabd, $idArticle) {
+        $req = 'SELECT * FROM sae_articles WHERE article_id='.$idArticle;
+        echo '<p>GetArticle() : '.$req.'</p>'."\n";
+        try {
+            $resultat = $mabd->query($req);
+        } catch (PDOException $e) {
+            // s'il y a une erreur, on l'affiche
+            echo '<p>Erreur : ' . $e->getMessage() . '</p>';
+            die();
+        }
+        // la fonction retourne le tableau associatif 
+        // contenant les champs et leurs valeurs
+        return $resultat->fetch();
+    }
+
+    
+	// afficher le "bon" auteur parmi les auteurs (prénom et nom)
+   // dans les balises "<option>"
+	function afficherMarqueOptionsSelectionne($mabd, $idMarque) {
+        $req = "SELECT * FROM sae_marques";
+        try {
+            $resultat = $mabd->query($req);
+        } catch (PDOException $e) {
+            // s'il y a une erreur, on l'affiche
+            echo '<p>Erreur : ' . $e->getMessage() . '</p>';
+            die();
+        }
+        foreach ($resultat as $value) {
+            echo '<option value="'.$value['marque_id'].'"';
+            if ($value['marque_id']==$idMarque) {
+                echo ' selected="selected"';
+            }
+            echo '>';
+            echo $value['marque_nom'];
+            echo '</option>'."\n";
+        }
+    }
+
+	// !!! FONCTION DE MODIFICATION D'UN ARTICLE !!! //
+    function modifierBD($mabd, $id, $nom, $prix, $nouvelleImage, $categorie, $couleur, $taille, $marque)
+    {
+        $req = 'UPDATE sae_articles
+                SET 
+                    article_nom="'.$nom.'", article_prix='.$prix.', article_photo="../images/uploads/'.$nouvelleImage.'", article_categorie="'.$categorie.'", article_couleur="'.$couleur.'", article_taille="'.$taille.'", _marque_id="'.$marque.'"
+                WHERE article_id='.$id;
+        echo '<p>' . $req . '</p>' . "\n";
+        try {
+            $resultat = $mabd->query($req);
+        } catch (PDOException $e) {
+            // s'il y a une erreur, on l'affiche
+            echo '<p>Erreur : ' . $e->getMessage() . '</p>';
+            die();
+        }
+        if ($resultat->rowCount() == 1) {
+            echo "<p>L'article ".$nom." a été modifié.</p><br>" ;
+        } else {
+            echo '<p>Erreur lors de la modification.</p>' . "\n";
             die();
         }
     }
