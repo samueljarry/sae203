@@ -299,6 +299,7 @@ and (min-width : 480px) {
     left: 32vw;
     top: -2.5vh;
     width: auto;
+    font-weight: 200;
 }
 
 
