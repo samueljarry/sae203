@@ -18,8 +18,8 @@
 	        $taille=$_POST['taille'];
 	        //$resume=trim($_POST['resume']);
 	        $marque=$_POST['marque'];
-	        var_dump($_POST);
-	        var_dump($_FILES);
+	        //var_dump($_POST);
+	        //var_dump($_FILES);
 	
 	        $imageType=$_FILES["photo"]["type"];
 	        if ( ($imageType != "image/png") &&

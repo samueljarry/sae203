@@ -135,7 +135,7 @@ function afficherAuteursOptions($mabd) {
         $req = 'INSERT INTO sae_articles (article_photo, article_nom, article_prix, article_couleur, article_taille, article_categorie, _marque_id) 
         VALUES ("/img/bds/'.$nouvelleImage.'", "'.$nom.'", '.$prix.', "'.$couleur.'", "'.$taille.'", "'.$categorie.'", "'.$marque.'"
         )';
-        echo '<p>' . $req . '</p>' . "\n";
+        // echo '<p>' . $req . '</p>' . "\n";
         try {
             $resultat = $mabd->query($req);
         } catch (PDOException $e) {
