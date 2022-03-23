@@ -48,25 +48,55 @@
 
         <div id="colorpicker">            
             
-            <input type="checkbox" id="beige" class="color">
+        <label>
+            <input type="radio" id="beige" name="color" value="beige">
+            <img src="couleurs/beige.jpg">
+        </label>
+
+        <label>
+            <input type="radio" id="blanc" name="color" value="blanc">
+            <img src="couleurs/blanc.jpg">
+        </label>
             
-            <input type="checkbox" id="blanc" class="color">
+        <label>
+        <input type="radio" id="bleuclair" name="color" value="bleuciel">
+            <img src="couleurs/bleuciel.jpg">
+        </label>
 
-            <input type="checkbox" id="rouge" class="color">
+        <label>
+            <input type="radio" id="gris" name="color" value="gris">
+            <img src="couleurs/gris.jpg">
+        </label>
 
-            <input type="checkbox" id="vert" class="color">
+        <label>
+        <input type="radio" id="jaune" name="color" value="jaune">
+            <img src="couleurs/jaune.jpg">
+        </label>
 
-            <input type="checkbox" id="navy" class="color">
+        <label>
+        <input type="radio" id="lilas" name="color" value="lilas">
+            <img src="couleurs/lilas.jpg">
+        </label>
 
-            <input type="checkbox" id="navy" class="color">
+        <label>
+        <input type="radio" id="navy" name="color" value="navy">
+            <img src="couleurs/navy.jpg">
+        </label>
 
-            <input type="checkbox" id="navy" class="color">
+        <label>
+        <input type="radio" id="noir" name="color" value="noir">
+            <img src="couleurs/noir.jpg">
+        </label>
 
-            <input type="checkbox" id="navy" class="color">
+        <label>
+        <input type="radio" id="rouge" name="color" value="rouge">
+            <img src="couleurs/rouge.jpg">
+        </label>
 
-            <input type="checkbox" id="navy" class="color">
-
-            <input type="checkbox" id="navy" class="color">
+        <label>
+        <input type="radio" id="vert" name="color" value="vert">
+            <img src="couleurs/vert.jpg">
+        </label>
         
         </div>
     </div>

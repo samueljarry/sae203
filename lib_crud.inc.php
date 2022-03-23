@@ -364,16 +364,14 @@ function genererDatalistMarque($mabd) {
 
 function afficherResultatRecherche($mabd) {
 
-    $prixMin = filter_var($_POST['prix_min'],
-    FILTER_SANITIZE_STRING);
-    $nom = filter_var($_POST['nom-article'],
-    FILTER_SANITIZE_STRING); 
+    $prixMin = filter_var($_POST['prix_min']);
+    $nom = filter_var($_POST['nom-article']); 
 
-    $prixMax = filter_var($_POST['prix_max'],
-    FILTER_SANITIZE_STRING); 
+    $prixMax = filter_var($_POST['prix_max']); 
 
-    $marque = filter_var($_POST['marque'],
-    FILTER_SANITIZE_STRING); 
+    $marque = filter_var($_POST['marque']);
+
+    $couleur = filter_var($_POST['color']);
 
 
 
@@ -384,7 +382,7 @@ function afficherResultatRecherche($mabd) {
     
     $req = "SELECT * FROM sae_articles INNER JOIN sae_marques 
     ON sae_articles._marque_id = sae_marques.marque_id 
-    WHERE marque_nom LIKE '%$marque%' AND article_nom LIKE '%$nom%' AND article_prix >= $prixMin AND article_prix <=$prixMax";
+    WHERE marque_nom LIKE '%$marque%' AND article_nom LIKE '%$nom%' AND article_prix >= $prixMin AND article_prix <=$prixMax AND article_couleur LIKE '%$couleur%'";
     
     try {
         $resultat = $mabd->query($req);
