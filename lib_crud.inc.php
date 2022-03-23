@@ -373,6 +373,10 @@ function afficherResultatRecherche($mabd) {
 
     $couleur = filter_var($_POST['color']);
 
+    $categorie = filter_var($_POST['categorie']);
+
+    $taille = filter_var($_POST['taille']);
+
 
 
     //$req = "SELECT * FROM sae_articles 
@@ -382,7 +386,13 @@ function afficherResultatRecherche($mabd) {
     
     $req = "SELECT * FROM sae_articles INNER JOIN sae_marques 
     ON sae_articles._marque_id = sae_marques.marque_id 
-    WHERE marque_nom LIKE '%$marque%' AND article_nom LIKE '%$nom%' AND article_prix >= $prixMin AND article_prix <=$prixMax AND article_couleur LIKE '%$couleur%'";
+    WHERE marque_nom LIKE '%$marque%' 
+    AND article_nom LIKE '%$nom%' 
+    AND article_prix >= $prixMin 
+    AND article_prix <=$prixMax 
+    AND article_couleur LIKE '%$couleur%'
+    AND article_taille LIKE '%$taille%'
+    AND article_categorie LIKE '%$categorie%'";
     
     try {
         $resultat = $mabd->query($req);

@@ -318,6 +318,22 @@ and (min-width : 480px) {
     text-align: center;
 }
 
+#marques {
+    margin-bottom: 5vh;
+}
+
+#marques input {
+    width: 50vw;
+    height: 5vh;
+    font-size: 3vw;
+    border-radius: 20vw;
+    text-align: center;
+}
+
+#colorpicker > label:nth-child(11) > img:nth-child(2) {
+    display:none;
+}
+
 #prix {
     display: flex;
     flex-direction: column;
@@ -350,6 +366,13 @@ input[type="text"] {
     justify-content: center;
     width: 60vw;
     font-size: 10vw;
+}
+
+#filtres form {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 #formcolor {
@@ -389,20 +412,20 @@ label {
 }
 
 
-[type=radio] {
+#colorpicker [type=radio] {
     position: absolute;
     opacity: 0;
   }
   
-  [type=radio]+img {
+ #colorpicker [type=radio]+img {
     cursor: pointer;
-    margin-right: 0.5rem;
-    width: 5px;
+    width: 25px;
   }
 
-  [type=radio]:checked + img {
+ #colorpicker [type=radio]:checked + img {
     outline: 2.5px solid #90d4a1;
   }
+
 
 .color {
     width: 5em;
@@ -421,46 +444,13 @@ label {
     margin: 1vw;
 }
 
-.color:nth-child(1) {
-    background-image: url("couleurs/beige.jpg");
-}
+#tout-t {
+    display: none;
+    }
 
-.color:nth-child(2) {
-    background-image: url("couleurs/blanc.jpg");
+#tout-c {
+display: none;
 }
-
-.color:nth-child(3) {
-    background-image: url("couleurs/bleuciel.jpg");
-}
-
-.color:nth-child(4) {
-    background-image: url("couleurs/gris.jpg");
-}
-
-.color:nth-child(5) {
-    background-image: url("couleurs/jaune.jpg");
-}
-
-.color:nth-child(6) {
-    background-image: url("couleurs/lilas.jpg");
-}
-
-.color:nth-child(7) {
-    background-image: url("couleurs/navy.jpg");
-}
-
-.color:nth-child(8) {
-    background-image: url("couleurs/noir.jpg");
-}
-
-.color:nth-child(9) {
-    background-image: url("couleurs/rouge.jpg");
-}
-
-.color:nth-child(10) {
-    background-image: url("couleurs/vert.jpg");
-}
-
 
 
 .color:checked {
@@ -519,10 +509,13 @@ label {
     font-size: 4.5vw;
 }
 
+
 .categoryrow input {
     width: 3vw;
     height: 3vw;
 }
+
+
 
 #formsize {
     width: auto;
@@ -601,9 +594,13 @@ and (min-width : 1224px) {
         transition:0.3s;
     }
 
+    #sidebar li a {
+        font-size: 50px;
+    }
+
     #sidebar.active li a {
         color:black;
-        font-size: 2rem;
+        font-size: 50px;
         animation: sidebar2 1.5s ease 0s 1 normal forwards;
         font-family: Lust;
         transition:0.3s;
@@ -680,6 +677,7 @@ and (min-width : 1224px) {
         width: 100vw;
         top: 7vh;
         background-repeat: no-repeat;
+        background-size:cover;
         overflow:hidden;
     }
 
@@ -746,18 +744,18 @@ and (min-width : 1224px) {
     align-items: center;
     width: 100%;
     display: flex;
-    top: 21vh;
-    position: relative;
+    top: 260px;
+    position: absolute;
     }
 
     .infos p {
-    position: absolute;
-    margin-top: 1vh;
-    left: -0.6vw;
-    height: 2vh;
-    text-align: left;
-    font-size: 1vw;
-    width: 60%;
+        position: absolute;
+        margin-top: 50px;
+        left: -11px;
+        height: auto;
+        text-align: left;
+        font-size: 1vw;
+        width: 60%;
     }
 
     .infos img {
@@ -783,8 +781,8 @@ and (min-width : 1224px) {
         position: absolute;
         margin-top: auto;
         font-size: 1vw;
-        top: 0.5vh;
-        left:18.5vw;
+        top: 17px;
+        left: 450px;
     }
 
     .article:hover .article_hover {
@@ -804,8 +802,17 @@ and (min-width : 1224px) {
         margin-bottom: 5vh;
     }
 
+    #marques {
+        margin-bottom: 5vh;
+    }
+
     #search input {
-        width: 15vw;
+        width: auto;
+        font-size: 1vw;
+    }
+
+    #marques input {
+        width: auto;
         font-size: 1vw;
     }
 
@@ -841,7 +848,7 @@ and (min-width : 1224px) {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-bottom: 5vh;
+        margin-bottom: 30px;
     }
 
     #formcolor label {
@@ -856,6 +863,8 @@ and (min-width : 1224px) {
         justify-content: space-around;
         align-items: center;
         left: 0vw;
+        margin-bottom: 30px;
+        margin-top: 30px;   
     }
 
     #colorpicker input {
@@ -932,7 +941,7 @@ and (min-width : 1224px) {
     }
 
     #formcategory label {
-        margin-bottom: 2vh;
+        margin-bottom: 30px;
     }
 
     label {
@@ -945,17 +954,45 @@ and (min-width : 1224px) {
       
     }
 
-    .categoryrow label{
-        margin-left: 0.5vw;
-        margin-bottom: 0vh;
-        font-size: 1vw;
-
+    .categoryrow label {
+        font-size: 25px;
+        margin-left: 0;
+        margin-bottom: 25px;
     }
 
     .categoryrow input {
         width: 1vw;
         height: 1vw;
     }
+
+    #categorie {
+        margin-bottom: 30px;
+    }
+
+    #categorie .categoryrow {
+        margin-bottom: -60px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #taille {
+        margin-top: 30px;
+    }
+
+    #taille .categoryrow {
+        margin-bottom: -60px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #colorpicker label {
+        width: 44px;
+    }
+
+    #colorpicker [type="radio"] + img {
+        cursor: pointer;
+        width: 40px;
+      }
     
 
     #formsize {

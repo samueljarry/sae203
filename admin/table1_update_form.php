@@ -22,7 +22,7 @@
         Nom : <input type="text" name="nom" value="<?php echo $article['article_nom']; ?>" required/><br />
         Prix : <input type="number" name="prix" min="0.00" max="10000.00" step="1" value="<?php echo $article['article_prix']; ?>" required /><br />
         Catégorie : <input type="text" name="categorie" value="<?php echo $article['article_categorie']; ?>" required/><br />
-        Couleur : <input type="text" name="couleur" value="<?php echo $article['article_couleur']; ?>" required/><br />
+        Couleur : <input type="text" name="couleur" value="couleurs/<?php echo $article['article_couleur']; ?>.jpg" required/><br />
         Tailles : <input type="text" name="taille" value="<?php echo $article['article_taille']; ?>" required/><br />
         Photo : <input type="file" name="photo" required /><br />
         Marque : <select name="marque" required>

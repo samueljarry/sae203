@@ -12,7 +12,7 @@
 	        Nom : <input type="text" name="nom" required /><br />
 	        Prix : <input type="number" name="prix" min="0.00" max="10000.00" required /><br />
 			Catégorie : <input type="text" name="categorie" required /><br />
-	        Couleur : <input type="text" name="couleur" placeholder="couleurs/[couleur].jpg" required /><br />
+	        Couleur : <input type="text" name="couleur" required /><br />
             Tailles disponibles : <input type="text" name="taille" required /><br />
 
 	        <!-- Résumé : <textarea name="resume" required></textarea><br /> -->

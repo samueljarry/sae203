@@ -14,15 +14,12 @@
     <div id="search">
         <label for="nom-article"></label>
         <input type="search" autocomplete="off" list="nom-article" id="nom-article" name="nom-article" placeholder="Nom de l'article"/>
-        <datalist id="nom-article">
-            <option value="Test">
-        </datalist>
-
     </div> 
 
+    <div id="marques">
+        <input type="search" id="real" list="auteurs" name="marque" autocomplete="off" placeholder="Marque"/>
+        <datalist id="auteurs">
 
-    <input type="search" id="real" list="auteurs" name="marque" autocomplete="off" />
-<datalist id="auteurs">
 <?php
     // On va afficher ici la datalist
     require 'lib_crud.inc.php';
@@ -31,6 +28,7 @@
     deconnexionBD($co);
 ?>
 </datalist>
+</div>
 
 
     <div id="prix">
@@ -44,7 +42,7 @@
     </div>
 
     <div id="formcolor">
-        <label for="couleur">Couleur :</label>
+        <label for="color">Couleur :</label>
 
         <div id="colorpicker">            
             
@@ -97,6 +95,11 @@
         <input type="radio" id="vert" name="color" value="vert">
             <img src="couleurs/vert.jpg">
         </label>
+
+        <label>
+        <input type="radio" id="tout" name="color" value="%" checked="checked">
+            <img src="couleurs/blanc.jpg">
+        </label>
         
         </div>
     </div>
@@ -105,47 +108,62 @@
         <label for="categorie">Catégorie :</label>
         <div id="categorie">
             <div class="categoryrow">
-                <input type="checkbox" id="veste" class="department">
+                <input type="radio" value="veste" class="department" name="categorie">
                 <label for="veste">Veste</label>
             </div>
             <div class="categoryrow">
-                <input type="checkbox" id="pantalon" class="department">
+                <input type="radio" value="Pantalon" class="department" name="categorie">
                 <label for="pantalon">Pantalon</label>
             </div>
             <div class="categoryrow">
-                <input type="checkbox" id="jean" class="department">
-                <label for="jean">Jean</label>
+                <input type="radio" value="T-shirt" class="department" name="categorie">
+                <label for="tshirt">T-shirt</label>
             </div>
             <div class="categoryrow">
-                <input type="checkbox" id="veste" class="department">
+                <input type="radio" value="Accessoire" class="department" name="categorie">
                 <label for="accessoire">Accessoire</label>
             </div>
-            <label for="categorie"></label>
+            <div class="categoryrow">
+                <input type="radio" value="Chemise" class="department" name="categorie">
+                <label for="chemise">Chemise</label>
+            </div>
+
+            <div class="categoryrow">
+                <input type="radio" value="Sweat" class="department" name="categorie">
+                <label for="sweat">Sweatshirts</label>
+            </div>
+
+            <div class="categoryrow">
+                <input type="radio" value="Basket" class="department" name="categorie">
+                <label for="chaussure">Chaussures</label>
+            </div>
+
+            <div class="categoryrow">
+                <input type="radio" value="%" id="tout-c" class="department" name="categorie" checked="checked">
+            </div>
+
         </div>
     </div>
 
     <div id="formsize">
-        <label for="categorie">Taille</label>
-        <div id="categorie">
+        <label for="taille">Taille</label>
+        <div id="taille">
+
             <div class="categoryrow">
-                <input type="checkbox" id="XS" class="department">
-                <label for="XS">XS</label>
+                <input type="radio" id="S" value="S" name="taille" class="department">
+                <label for="S">XS / S</label>
             </div>
             <div class="categoryrow">
-                <input type="checkbox" id="S" class="department">
-                <label for="S">S</label>
-            </div>
-            <div class="categoryrow">
-                <input type="checkbox" id="M" class="department">
+                <input type="radio" id="M" value="M" name="taille" class="department">
                 <label for="M">M</label>
             </div>
             <div class="categoryrow">
-                <input type="checkbox" id="L" class="department">
-                <label for="L">L</label>
+                <input type="radio" id="L" value="L" name="taille" class="department">
+                <label for="L">L / XL </label>
             </div>
+
             <div class="categoryrow">
-                <input type="checkbox" id="XL" class="department">
-                <label for="XL">XL</label>
+                <input type="radio" id="tout-t" value="%" name="taille" class="department" checked="checked">
             </div>
             
         </div>
