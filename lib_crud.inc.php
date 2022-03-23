@@ -345,6 +345,72 @@ function afficherAuteursOptions($mabd) {
         }
     }
 
+    // Génération de la liste des auteurs dans le formulaire de recherche
+function genererDatalistMarque($mabd) {
+    // on sélectionne le nom et prénom de tous les auteurs de la table auteurs
+    $req = "SELECT marque_nom FROM sae_marques";
+    try {
+        $resultat = $mabd->query($req);
+    } catch (PDOException $e) {
+        // s'il y a une erreur, on l'affiche
+        echo '<p>Erreur : ' . $e->getMessage() . '</p>';
+        die();
+    }
+    // pour chaque auteur, on met son nom <option>
+    foreach ($resultat as $value) {
+        echo '<option value="'. $value['marque_nom'] .'">'; 
+    } 
+}
+
+function afficherResultatRecherche($mabd) {
+
+    $prixMin = filter_var($_POST['prix_min'],
+    FILTER_SANITIZE_STRING);
+    $nom = filter_var($_POST['nom-article'],
+    FILTER_SANITIZE_STRING); 
+
+    $prixMax = filter_var($_POST['prix_max'],
+    FILTER_SANITIZE_STRING); 
+
+    $marque = filter_var($_POST['marque'],
+    FILTER_SANITIZE_STRING); 
+
+
+
+    //$req = "SELECT * FROM sae_articles 
+    //        INNER JOIN sae_marques 
+    //        ON sae_articles._marque_id = sae_marques.marque_id
+    //        WHERE article_nom OR marque_nom LIKE '%$nom%' OR LIKE '%$marque%' AND article_prix >= $prixMin AND article_prix <= $prixMax";
+    
+    $req = "SELECT * FROM sae_articles INNER JOIN sae_marques 
+    ON sae_articles._marque_id = sae_marques.marque_id 
+    WHERE marque_nom LIKE '%$marque%' AND article_nom LIKE '%$nom%' AND article_prix >= $prixMin AND article_prix <=$prixMax";
+    
+    try {
+        $resultat = $mabd->query($req);
+    } catch (PDOException $e) {
+        // s'il y a une erreur, on l'affiche
+        echo '<p>Erreur : ' . $e->getMessage() . '</p>';
+        die();
+    }
+    foreach ($resultat as $value) {
+        echo '<div class="article">'; 
+        echo '<img src="'.$value['article_photo'].'">';
+        echo '<div class="infos">';
+        echo '<p>'.$value['article_nom'];
+        echo '<h3>'.$value['article_prix'].'€</h3>';
+        echo '<img src="'.$value['article_couleur'].'">';
+        echo '<div class="article_hover">';
+        echo '<p>Marque : '.$value['marque_nom'].'</p>';
+        echo '<p>Tailles disponible : '.$value['article_taille'].'</p>';
+        echo '<p>Catégorie : '.$value['article_categorie'].'</p>';
+        echo '<p>Informations sur la marque :</p>';
+        echo '<p>Provenance : '.$value['marque_nationalite'].'</p>';
+        echo '<p>Transporteur : '.$value['marque_transporteur'].'</p>';
+        echo '</div></div></div>';
+      }
+}
+
 
 
    

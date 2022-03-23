@@ -21,16 +21,16 @@
     </div> 
 
 
-    <input type="search" id="real" list="auteurs" autocomplete="off" />
-        <datalist id="auteurs">
-        <?php
-            // On va afficher ici la datalist
-            require 'lib_crud.inc.php';
-            $co=connexionBD();
-            genererDatalistMarque($co);
-            deconnexionBD($co);
-        ?>
-        </datalist>
+    <input type="search" id="real" list="auteurs" name="marque" autocomplete="off" />
+<datalist id="auteurs">
+<?php
+    // On va afficher ici la datalist
+    require 'lib_crud.inc.php';
+    $co=connexionBD();
+    genererDatalistMarque($co);
+    deconnexionBD($co);
+?>
+</datalist>
 
 
     <div id="prix">
