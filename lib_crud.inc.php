@@ -155,7 +155,7 @@ function afficherAuteursOptions($mabd) {
     // !!! EFFACEMENT D'UN ARTICLE !!! //
     function effaceBD($mabd, $id) {
         $req = 'DELETE FROM sae_articles WHERE article_id='.$id;
-        echo '<p>'.$req.'</p>'."\n";
+        //echo '<p>'.$req.'</p>'."\n";
         try{
             $resultat = $mabd->query($req);
         } catch (PDOException $e) {
@@ -174,7 +174,7 @@ function afficherAuteursOptions($mabd) {
     // RÉCUPÉRATION DES INFOS D'UN ARTICLE
     function getArticle($mabd, $idArticle) {
         $req = 'SELECT * FROM sae_articles WHERE article_id='.$idArticle;
-        echo '<p>GetArticle() : '.$req.'</p>'."\n";
+        //echo '<p>GetArticle() : '.$req.'</p>'."\n";
         try {
             $resultat = $mabd->query($req);
         } catch (PDOException $e) {
@@ -217,7 +217,7 @@ function afficherAuteursOptions($mabd) {
                 SET 
                     article_nom="'.$nom.'", article_prix='.$prix.', article_photo="../images/uploads/'.$nouvelleImage.'", article_categorie="'.$categorie.'", article_couleur="'.$couleur.'", article_taille="'.$taille.'", _marque_id="'.$marque.'"
                 WHERE article_id='.$id;
-        echo '<p>' . $req . '</p>' . "\n";
+        //echo '<p>' . $req . '</p>' . "\n";
         try {
             $resultat = $mabd->query($req);
         } catch (PDOException $e) {
@@ -291,7 +291,7 @@ function afficherAuteursOptions($mabd) {
     // !!! EFFACEMENT D'UNE MARQUE !!! //
     function effaceMarque($mabd, $id) {
         $req = 'DELETE FROM sae_marques WHERE marque_id='.$id;
-        echo '<p>'.$req.'</p>'."\n";
+        //echo '<p>'.$req.'</p>'."\n";
         try{
             $resultat = $mabd->query($req);
         } catch (PDOException $e) {
@@ -310,7 +310,7 @@ function afficherAuteursOptions($mabd) {
     // !!! RÉCUPÉRATION INFOS MARQUES !!! //
     function getMarque($mabd, $idMarque) {
         $req = 'SELECT * FROM sae_marques WHERE marque_id='.$idMarque;
-        echo '<p>getMarque() : '.$req.'</p>'."\n";
+        //echo '<p>getMarque() : '.$req.'</p>'."\n";
         try {
             $resultat = $mabd->query($req);
         } catch (PDOException $e) {
@@ -329,7 +329,7 @@ function afficherAuteursOptions($mabd) {
                 SET 
                     marque_nom="'.$nom.'", marque_nationalite="'.$nationalite.'", marque_transporteur="'.$transporteur.'"
                 WHERE marque_id='.$id;
-        echo '<p>' . $req . '</p>' . "\n";
+        //echo '<p>' . $req . '</p>' . "\n";
         try {
             $resultat = $mabd->query($req);
         } catch (PDOException $e) {

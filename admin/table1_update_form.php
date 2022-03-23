@@ -14,7 +14,7 @@
         $id=$_GET['num'];
         $co=connexionBD();
         $article=getArticle($co, $id);
-        var_dump($article);
+        //var_dump($article);
         deconnexionBD($co);
     ?>
     <form action="table1_update_valide.php" method="POST" enctype="multipart/form-data" >

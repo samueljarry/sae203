@@ -18,7 +18,20 @@
             <option value="Test">
         </datalist>
 
-    </div>
+    </div> 
+
+
+    <input type="search" id="real" list="auteurs" autocomplete="off" />
+        <datalist id="auteurs">
+        <?php
+            // On va afficher ici la datalist
+            require 'lib_crud.inc.php';
+            $co=connexionBD();
+            genererDatalistMarque($co);
+            deconnexionBD($co);
+        ?>
+        </datalist>
+
 
     <div id="prix">
     <label for="prix_min"></label>

@@ -14,7 +14,7 @@
         $id=$_GET['num'];
         $co=connexionBD();
         $marque=getMarque($co, $id);
-        var_dump($marque);
+        //var_dump($marque);
         deconnexionBD($co);
     ?>
     <form action="table2_update_valide.php" method="POST" enctype="multipart/form-data" >

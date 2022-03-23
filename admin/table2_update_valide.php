@@ -15,8 +15,8 @@
 	        $nom=$_POST['nom'];
 	        $nationalite=$_POST['nationalite'];
 			$transporteur=$_POST['transporteur'];
-	        var_dump($_POST);
-	        var_dump($_FILES);
+	        //var_dump($_POST);
+	        //var_dump($_FILES);
 	
 	        $co=connexionBD();
 	        modifierMarque($co, $id, $nom, $nationalite, $transporteur);
