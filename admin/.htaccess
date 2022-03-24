@@ -1,0 +1,9 @@
+AuthName "Protection du CRUD sae203"
+AuthType Basic
+AuthUserFile "/home/mmi21c10/htpassword.mmi"
+Require valid-user
+DirectoryIndex admin.php
+SetEnv PHP_VALUE "display_errors = Off"
+RewriteEngine On
+RewriteRule articles /var/www/sae203/admin/gestion_table1.php
+RewriteRule marques /var/www/sae203/admin/gestion_table2.php

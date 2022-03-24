@@ -62,12 +62,11 @@ function afficherCatalogue($mabd) {
         echo '<h3>'.$value['article_prix'].'€</h3>';
         echo '<img src="'.$value['article_couleur'].'">';
         echo '<div class="article_hover">';
-        echo '<p>Marque : '.$value['marque_nom'].'</p>';
-        echo '<p>Tailles disponible : '.$value['article_taille'].'</p>';
-        echo '<p>Catégorie : '.$value['article_categorie'].'</p>';
-        echo '<p>Informations sur la marque :</p>';
-        echo '<p>Provenance : '.$value['marque_nationalite'].'</p>';
-        echo '<p>Transporteur : '.$value['marque_transporteur'].'</p>';
+        echo '<p>Marque  : '.$value['marque_nom'].'</p>';
+        echo '<p>Tailles disponible 📏 : '.$value['article_taille'].'</p>';
+        echo '<p>Catégorie 👕 : '.$value['article_categorie'].'</p>';
+        echo '<p>Provenance 🌍 : '.$value['marque_nationalite'].'</p>';
+        echo '<p>Transporteur 🚚 : '.$value['marque_transporteur'].'</p>';
         echo '</div></div></div>';
       }
 

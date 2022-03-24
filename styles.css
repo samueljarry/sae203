@@ -177,7 +177,7 @@ main {
 #listing {
     display: grid;
     grid-template-columns: repeat(2, 50vw);
-    grid-template-rows: repeat(25, 35vh);;
+    grid-template-rows: repeat(25, 27vh);
 }
 
 /* INDEX */
@@ -194,7 +194,7 @@ main {
   
 #index a {
         position: relative;
-        top: -6vh;
+        top: -36vh;
         font-size: 2em;
 }
 /* Listing */
@@ -205,9 +205,9 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 30vw;
     height: auto;
     margin-top: 5vh;
+    position:relative;
 
 }
 
@@ -215,36 +215,28 @@ main {
     display: none;
 }
 
-.article:hover .article_hover {
+.article:hover .infos .article_hover {
     opacity: 0.8;
     display: flex;
     flex-direction: column;
     transition: 0.3s;
-    width: auto;
+    width: 25vw;
     z-index: 5;
     background: white;
     position: absolute;
-    right:-17vw;
-    top: -18vh;
-    animation: articlehover 0.3s cubic-bezier(0.11, 0, 0.5, 0) 0s 1 normal none;
+    left: 0;
+
 }
 
-@keyframes articlehover {
-    0% {
-      opacity: 0;
-    }
-  
-    100% {
-      opacity: 1;
-    }
-  }
 
-.article:hover .article_hover p {
-    width: 44vw;
+.article:hover .infos .article_hover p {
+    width: auto;
     height: auto;
     text-align: left;
     transition: 0.3s;
     position: relative;
+    top: 0;
+    left: 0px;
 }
 
 @media only screen 
@@ -252,14 +244,13 @@ and (min-width : 480px) {
 
 .article:nth-child(odd) {
     position: relative; 
-   left: 10vw;
-   grid-column: 1/2;
-   margin-right:20vw;
+    left: auto;
+    grid-column: 1/2;
 }
 
 .article:nth-child(even) {
     position: relative;
-    right: -10vw;
+    right: auto;
    grid-column: 2/2;
 }
 }
@@ -270,10 +261,11 @@ and (min-width : 480px) {
 }
 
 .infos img {
-    width: 5vw;
-    border-radius: 100vw;
-    position: absolute;
-    top: -45vw;
+    width: 40px;
+        border-radius: 100vw;
+        position: absolute;
+        top: -440px;
+        left: -115px;
     }
 
 .infos {
@@ -287,19 +279,18 @@ and (min-width : 480px) {
 }
 
 .infos p{
-    position:relative;
-    margin-top: 1vh;
-    left: 0;
-    width: 26vw;
-    text-align: left;
+    position: absolute;
+    left: -135px;
+    width: auto;
+    min-width: 300px;
 }
 
 .infos h3{
-    position: relative;
-    left: 32vw;
-    top: -2.5vh;
-    width: auto;
-    font-weight: 200;
+    position: absolute;
+        left: 225px;
+        top: -2px;
+        width: auto;
+        font-weight: 200;
 }
 
 
@@ -364,7 +355,7 @@ input[type="text"] {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 60vw;
+    width: 100vw;
     font-size: 10vw;
 }
 
@@ -381,17 +372,17 @@ input[type="text"] {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5vh;
+    margin-bottom: 2vh;
 }
 
 #colorpicker {
     width: 30vw;
+    margin-top: 2vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     position: relative;
-    left: -4vw;
 }
 
 label {
@@ -418,8 +409,10 @@ label {
   }
   
  #colorpicker [type=radio]+img {
-    cursor: pointer;
-    width: 25px;
+    width: 55px;
+    border-radius: 20vw;
+    border: solid;
+    border-width: 1px;
   }
 
  #colorpicker [type=radio]:checked + img {
@@ -518,12 +511,26 @@ display: none;
 
 
 #formsize {
-    width: auto;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5vh;
+}
+
+#formsize .categoryrow {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 5vh;
+    text-align: left;
+    justify-content: start;
+    width: 25vw;
+    position: relative;
+    left: 0;
+}
+
+#formsize .categoryrow label {
+    width: auto;
+
 }
 
 /* LAPTOP */ 
@@ -708,12 +715,24 @@ and (min-width : 1224px) {
     }
 
     #index a {
+        margin-top: 2px;
         font-size: 1.2em;
+        top: -200px;
+        margin-bottom: 50px;
     }
 
     #index a:hover {
         color: #90d4a1;
         transition: 0.3s;
+    }
+
+    #voirplus {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        top: 200px;
     }
 
     /* LISTING */
@@ -728,6 +747,13 @@ and (min-width : 1224px) {
         grid-template-columns: repeat(4, 25vw);
         grid-template-rows: repeat(13, 32vw);
     }
+
+    #listing1 {
+        display: grid;
+        grid-template-columns: repeat(4, 25vw);
+        grid-template-rows: repeat(2, 32vw);
+    }
+
     .article {
         width: 17vw;
         margin-top: -5vh;
@@ -744,58 +770,76 @@ and (min-width : 1224px) {
     align-items: center;
     width: 100%;
     display: flex;
-    top: 260px;
+    top: 158px;
     position: absolute;
     }
 
     .infos p {
         position: absolute;
-        margin-top: 50px;
-        left: -11px;
+        margin-top: 0;
         height: auto;
         text-align: left;
         font-size: 1vw;
         width: 60%;
+        top: -6px;
+        left: -5px;
     }
 
     .infos img {
-        width: 1.5vw;
+        width: 23px;
+        border-radius: 100vw;
         position: absolute;
-        left: 0.5vw;
-        top: -21vw;
+        top: -303px;
+        left: 10px;
     }
 
     .article:nth-child(odd) {
         position: relative;
         grid-column: auto;
-        margin-right: 20vw;
+        left: 150px;
     }
 
     .article:nth-child(even) {
         position: relative;
         grid-column: auto;
-        margin-right: 20vw;
+        left: 150px;
     }
 
     .infos h3 {
         position: absolute;
         margin-top: auto;
         font-size: 1vw;
-        top: 17px;
-        left: 450px;
+        top: -6px;
+        left: 270px;
     }
 
-    .article:hover .article_hover {
+    .article:hover .infos .article_hover {
+        opacity: 0.9;
+        display: flex;
+        flex-direction: column;
+        transition: 0.3s;
+        width: 22vw;
+        z-index: 5;
+        background: white;
+        position: absolute;
+        right: 8vw;
+        top: -325px;
+        height: 320px;
+        justify-content: center;
+        left: -7px;
+    }
+
+    .article:hover .infos .article_hover p {
+        width: auto;
+        height: auto;
+        text-align: left;
+        transition: 0.3s;
         position: relative;
-        top: -22vh;
-        left: 1vw;
-        width: 20vw;
     }
 
-    .article:hover .article_hover p{
-        margin-left: 1vw;
+    .article div:hover .article_hover {
+        display:none;
     }
-
     /* PAGE RECHERCHE */
 
     #search {
@@ -863,7 +907,6 @@ and (min-width : 1224px) {
         justify-content: space-around;
         align-items: center;
         left: 0vw;
-        margin-bottom: 30px;
         margin-top: 30px;   
     }
 
@@ -934,14 +977,11 @@ and (min-width : 1224px) {
     #formcategory {
         width: auto;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
-        margin-bottom: 5vh;
     }
 
     #formcategory label {
-        margin-bottom: 30px;
+        margin-bottom: 0;
     }
 
     label {
@@ -950,48 +990,57 @@ and (min-width : 1224px) {
 
     .categoryrow {
         display: flex;
+        justify-content: space-around;
+        align-items: center;
         left: 0vw;
+        width: 100px;
       
     }
 
     .categoryrow label {
         font-size: 25px;
         margin-left: 0;
-        margin-bottom: 25px;
+        margin-bottom: 0;
+        height: auto;
     }
 
     .categoryrow input {
-        width: 1vw;
-        height: 1vw;
+        width: 10px;
+        height: 10px;
     }
 
     #categorie {
         margin-bottom: 30px;
+        margin-top: 30px;
     }
 
     #categorie .categoryrow {
-        margin-bottom: -60px;
+        margin: 0;
         display: flex;
         justify-content: space-evenly;
     }
+
+    #categorie .categoryrow label {
+        font-size: 15px;
+        width: 60px;
+        }
 
     #taille {
         margin-top: 30px;
     }
 
-    #taille .categoryrow {
-        margin-bottom: -60px;
-        display: flex;
-        justify-content: space-evenly;
+    #taille .categoryrow label{
+        font-size: 15px;
     }
 
-    #colorpicker label {
-        width: 44px;
+    #taille .categoryrow {
+        width: auto;
+        left: none;
     }
 
     #colorpicker [type="radio"] + img {
         cursor: pointer;
-        width: 40px;
+        width: 20px;
       }
     
 

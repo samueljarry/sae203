@@ -8,7 +8,7 @@
 <main id="index">
         <h1>Collection Spring-Summer 2022</h1>
 
-        <main id="listing">
+        <main id="listing1">
         <?php
 
         require 'secretxyz123.inc.php';
@@ -38,8 +38,9 @@ foreach ($resultat as $value) {
 
 ?>
         </main>
-
-        <a href="listing.php">Voir plus</a>
+        <div id="voirplus">
+            <a href="listing.php">Voir plus</a>
+        </div>
 </main>
 
 </html>
