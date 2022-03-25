@@ -177,7 +177,14 @@ main {
 #listing {
     display: grid;
     grid-template-columns: repeat(2, 50vw);
-    grid-template-rows: repeat(25, 27vh);
+    grid-template-rows: repeat(25, 32vh);
+}
+
+#listing1 {
+    margin-top: 200px;
+    display: grid;
+    grid-template-columns: repeat(2, 50vw);
+    grid-template-rows: repeat(4, 32vh);
 }
 
 /* INDEX */
@@ -194,8 +201,13 @@ main {
   
 #index a {
         position: relative;
-        top: -36vh;
+        margin-top: 20px;
+        margin-bottom: 20px;
         font-size: 2em;
+}
+
+#voirplus {
+    margin-top: 100px;
 }
 /* Listing */
 
@@ -220,12 +232,14 @@ main {
     display: flex;
     flex-direction: column;
     transition: 0.3s;
-    width: 25vw;
+    width: 50vw;
     z-index: 5;
     background: white;
     position: absolute;
-    left: 0;
-
+    left: -137px;
+    height: 46vw;
+    top: -462px;
+    justify-content: center;
 }
 
 

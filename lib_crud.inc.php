@@ -132,7 +132,7 @@ function afficherAuteursOptions($mabd) {
     function ajouterBD($mabd, $nom, $prix, $nouvelleImage, $couleur, $taille, $marque, $categorie)
     {
         $req = 'INSERT INTO sae_articles (article_photo, article_nom, article_prix, article_couleur, article_taille, article_categorie, _marque_id) 
-        VALUES ("images/uploads/'.$nouvelleImage.'", "'.$nom.'", '.$prix.', "'.$couleur.'", "'.$taille.'", "'.$categorie.'", "'.$marque.'"
+        VALUES ("images/uploads/'.$nouvelleImage.'", "'.$nom.'", '.$prix.', "couleurs/'.$couleur.'.jpg", "'.$taille.'", "'.$categorie.'", "'.$marque.'"
         )';
         // echo '<p>' . $req . '</p>' . "\n";
         try {
@@ -143,7 +143,7 @@ function afficherAuteursOptions($mabd) {
             die();
         }
         if ($resultat->rowCount() == 1) {
-            echo "<p>L'article ".$nom." a été ajouté au catalogue.</p><br>'";
+            echo "<p>L'article ".$nom." a été ajouté au catalogue.</p><br>";
         } else {
             echo '<p>Erreur lors de l\'ajout.</p>' . "\n";
             die();
@@ -280,7 +280,7 @@ function afficherAuteursOptions($mabd) {
             die();
         }
         if ($resultat->rowCount() == 1) {
-            echo "<p>L'article ".$nom." a été ajouté au catalogue.</p><br>'";
+            echo "<p>L'article ".$nom." a été ajouté au catalogue.</p><br>";
         } else {
             echo '<p>Erreur lors de l\'ajout.</p>' . "\n";
             die();
