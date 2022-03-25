@@ -1112,12 +1112,155 @@ and (min-width : 1224px) {
 
     /* PAGE GESTION */
 
-    #gestion img{
+    #gestion {
+        position: absolute;
+        top: 0;
+        margin:auto;
+        width: 100vw;
+        height:100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #gestion a {
+        font-family: montserrat;
+        color: black;
+        transition: 0.2s;
+    }
+
+    #gestion a:hover {
+        color: #90d4a1;
+        transition: 0.2s;
+    }
+
+    #gestion ul li a {
+        font-family: montserrat;
+        color: #90d4a1;
+    }
+
+    #gestion h1 {
+        margin-bottom: 20px;
+    }
+
+    #gestion ul {
+        list-style-type: none;
+        text-align:start;
+        font-size: 20px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #gestion ul li{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #gestion1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #gestion1 > a:nth-child(1) {
+        color: black;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        font-weight: 400;
+        font-size: 30px;
+       }
+
+    #gestion1 > a:nth-child(1):hover {
+        color: #90d4a1;
+        transition: 0.2s;
+       }
+       
+
+    #gestion1 > p:nth-child(3) > a:nth-child(1) {
+        color: white;
+        transition: 0.2s;
+       }
+       
+
+    #gestion1 > p:nth-child(3) {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 15vw;
+        border-radius: 8px;
+        text-align: center;
+        background: #90d4a1;
+       }
+       
+
+    #gestion1 table {
+        border-collapse: collapse;
+        width: 90vw;
+    }
+
+    #gestion1 th {
+        text-align: left;
+    }
+
+    #gestion1 tr:nth-child(even){
+        background-color: #f2f2f2;
+    }
+
+    #gestion1 tr {
+        border:solid;
+        border-width: 1px;
+        border-left: none;
+        border-right: none;
+    }
+
+    #gestion1 img{
         width: 40px;
     }
 
-    #gestion td {
+    #gestion1 td {
         font-size: 13px;
+        height: 50px;
     }
 
+    #gestion1 a {
+        font-family: montserrat;
+        color: #90d4a1;
+    }
+
+    #gestion1 tr td:nth-child(11) a {
+        color: red;
+        font-weight: 450;
+        }
+
+        #gestion1 tr td:nth-child(10) a {
+            color: black;
+            font-weight: 450;
+            }
+
+    /* TABLE 2 */
+
+
+        #gestion1 tr td:nth-child(4) a {
+            color: black;
+            font-weight: 450;
+            }
+
+            #gestion1 tr td:nth-child(5) a {
+                color: red;
+                font-weight: 450;
+                }
+
+                #gestion1 > p:nth-child(4) {
+                    margin-top: 20px;
+        margin-bottom: 20px;
+        width: 15vw;
+        border-radius: 8px;
+        text-align: center;
+        background: #90d4a1;
+                    }
+
+                    #gestion1 > p:nth-child(4) a{
+                        color:white;
+                        }
 }
