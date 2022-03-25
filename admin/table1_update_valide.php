@@ -2,10 +2,14 @@
 <html>
 	<head>
 		<title>SAE203</title>
+        <link rel="stylesheet" type="text/css" href="../styles.css">
 	</head>
 	<body style="font-family:sans-serif;">
+    <div id="gestion1">
+        <div id="lien">
 	    <a href="../index.php">Accueil</a> | <a href="table1_gestion.php">Gestion</a>
-	    <hr />
+	    </div>
+        <hr />
 	    <h1>Modifier une bande dessinée</h1>
 	    <hr />
 	    <?php
@@ -46,5 +50,6 @@
 	        modifierBD($co, $id, $nom, $prix, $nouvelleImage, $categorie, $couleur, $taille, $marque);
 	        deconnexionBD($co);
 	    ?>
+    </div>
 	</body>
 </html>

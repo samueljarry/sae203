@@ -2,9 +2,13 @@
 <html>
 	<head>
 		<title>SAE203</title>
+		<link rel="stylesheet" type="text/css" href="../styles.css">
 	</head>
 	<body style="font-family:sans-serif;">
+	<div id="gestion1">
+            <div id="lien">
 	    <a href="../index.php">Accueil</a> | <a href="admin.php">Gestion</a>
+			</div>
 	    <hr />
 	    <h1>Ajouter une bande dessinée</h1>
 	    <hr />
@@ -47,5 +51,6 @@
 	        ajouterBD($co, $nom, $prix, $nouvelleImage, $couleur, $taille, $marque, $categorie);
 	        deconnexionBD($co);
 	    ?>
+	</div>
 	</body>
 </html>

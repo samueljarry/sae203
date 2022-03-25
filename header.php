@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="FR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script>
         function show() {
@@ -12,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/lve5zse.css">
     <link rel="stylesheet" href="https://use.typekit.net/vby5cao.css">
+    <title>Eclothing</title>
 
 </head>
 <header>
@@ -32,7 +34,7 @@
     <div id="navbar">
             <nav>
             <div class="logo">
-                <a href="index.php"><img src="images/eclothing.png"></a>
+                <a href="index.php"><img src="images/eclothing.png" alt="logo"></a>
             </div>
         </nav>
     </div>

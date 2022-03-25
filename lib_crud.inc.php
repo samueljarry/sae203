@@ -87,11 +87,11 @@ function afficherCatalogueIndex($mabd) {
     
     foreach ($resultat as $value) {
         echo '<div class="article">'; 
-        echo '<img src="'.$value['article_photo'].'">';
+        echo '<img src="'.$value['article_photo'].'" alt="articlePhoto">';
         echo '<div class="infos">';
         echo '<p>'.$value['article_nom'];
         echo '<h3>'.$value['article_prix'].'€</h3>';
-        echo '<img src="'.$value['article_couleur'].'">';
+        echo '<img src="'.$value['article_couleur'].'" alt="pastille">';
         echo '<div class="article_hover">';
         echo '<p>Marque : '.$value['marque_nom'].'</p>';
         echo '<p>Tailles disponible 📏 : '.$value['article_taille'].'</p>';
@@ -396,18 +396,11 @@ function afficherResultatRecherche($mabd) {
 
     $prixMin = filter_var($_POST['prix_min']);
     $nom = filter_var($_POST['nom-article']); 
-
     $prixMax = filter_var($_POST['prix_max']); 
-
     $marque = filter_var($_POST['marque']);
-
     $couleur = filter_var($_POST['color']);
-
     $categorie = filter_var($_POST['categorie']);
-
     $taille = filter_var($_POST['taille']);
-
-
 
     //$req = "SELECT * FROM sae_articles 
     //        INNER JOIN sae_marques 

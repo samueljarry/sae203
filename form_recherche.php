@@ -30,7 +30,7 @@
 </datalist>
 </div>
 
-
+    <label>Prix</label>
     <div id="prix">
     <label for="prix_min"></label>
     <input type="number" id="prix_min" autocomplete="off" name="prix_min" placeholder="Prix minimum" value="0" data-parsley-type="number">
