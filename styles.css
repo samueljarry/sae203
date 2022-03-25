@@ -280,6 +280,8 @@ and (min-width : 480px) {
         position: absolute;
         top: -440px;
         left: -115px;
+        border: solid;
+        border-width: 1.5px;
     }
 
 .infos {
@@ -321,6 +323,8 @@ and (min-width : 480px) {
     font-size: 3vw;
     border-radius: 20vw;
     text-align: center;
+    border:solid;
+    border-width: 2px;
 }
 
 #marques {
@@ -333,6 +337,8 @@ and (min-width : 480px) {
     font-size: 3vw;
     border-radius: 20vw;
     text-align: center;
+    border:solid;
+    border-width: 2px;
 }
 
 #colorpicker > label:nth-child(11) > img:nth-child(2) {
@@ -354,6 +360,18 @@ and (min-width : 480px) {
     height:4vh;
     width: 30vw;
     text-align: center;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 form {
@@ -547,6 +565,16 @@ display: none;
 
 }
 
+#filtres > form:nth-child(1) > input:nth-child(7) {
+    margin-bottom: 5vh;
+    height: 5vh;
+    width: 75vw;
+    font-size: 5vw;
+    font-weight:100;
+    background: #90d4a1;
+    color: white;
+    }
+
 /* LAPTOP */ 
 
 @media only screen 
@@ -729,7 +757,7 @@ and (min-width : 1224px) {
     }
 
     #index a {
-        margin-top: 2px;
+        margin-top: -100px;
         font-size: 1.2em;
         top: -200px;
         margin-bottom: 50px;
@@ -805,6 +833,7 @@ and (min-width : 1224px) {
         position: absolute;
         top: -303px;
         left: 10px;
+        border-width: 0.5px;
     }
 
     .article:nth-child(odd) {
@@ -867,11 +896,13 @@ and (min-width : 1224px) {
     #search input {
         width: auto;
         font-size: 1vw;
+        height: 40px;
     }
 
     #marques input {
         width: auto;
         font-size: 1vw;
+        height: 40px;
     }
 
     #prix {
@@ -882,6 +913,9 @@ and (min-width : 1224px) {
         margin-bottom: 2vh;
         width: 10vw;
         font-size: 1vw;
+        height: 30px;
+        border: solid;
+        border-width: 2px;
     }
 
     form {
@@ -1066,6 +1100,15 @@ and (min-width : 1224px) {
         align-items: center;
         margin-bottom: 5vh;
     }
+
+    #filtres > form:nth-child(1) > input:nth-child(7) {
+        margin-bottom: 5vh;
+        height: 30px;
+        width: 50%;
+        font-size: 15px;
+        border-radius: 10px;
+        border: none;
+        }
 
     /* PAGE GESTION */
 

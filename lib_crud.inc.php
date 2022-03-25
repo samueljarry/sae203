@@ -56,13 +56,44 @@ function afficherCatalogue($mabd) {
     
     foreach ($resultat as $value) {
         echo '<div class="article">'; 
+        echo '<img src="'.$value['article_photo'].'" alt="articlePhoto">';
+        echo '<div class="infos">';
+        echo '<p>'.$value['article_nom'];
+        echo '<h3>'.$value['article_prix'].'€</h3>';
+        echo '<img src="'.$value['article_couleur'].'" alt="pastille">';
+        echo '<div class="article_hover">';
+        echo '<p>Marque  : '.$value['marque_nom'].'</p>';
+        echo '<p>Tailles disponible 📏 : '.$value['article_taille'].'</p>';
+        echo '<p>Catégorie 👕 : '.$value['article_categorie'].'</p>';
+        echo '<p>Provenance 🌍 : '.$value['marque_nationalite'].'</p>';
+        echo '<p>Transporteur 🚚 : '.$value['marque_transporteur'].'</p>';
+        echo '</div></div></div>';
+      }
+
+
+}
+
+//!!! AFFICHAGE CATALOGUE INDEX!!!//
+function afficherCatalogueIndex($mabd) {
+    $req = "SELECT * FROM sae_articles INNER JOIN sae_marques ON sae_articles._marque_id = sae_marques.marque_id limit 8";
+    try {
+        $resultat = $mabd->query($req);
+    } catch (PDOException $e) {
+        // s'il y a une erreur, on l'affiche
+        echo '<p>Erreur : ' . $e->getMessage() . '</p>';
+        die();
+    }
+    
+    
+    foreach ($resultat as $value) {
+        echo '<div class="article">'; 
         echo '<img src="'.$value['article_photo'].'">';
         echo '<div class="infos">';
         echo '<p>'.$value['article_nom'];
         echo '<h3>'.$value['article_prix'].'€</h3>';
         echo '<img src="'.$value['article_couleur'].'">';
         echo '<div class="article_hover">';
-        echo '<p>Marque  : '.$value['marque_nom'].'</p>';
+        echo '<p>Marque : '.$value['marque_nom'].'</p>';
         echo '<p>Tailles disponible 📏 : '.$value['article_taille'].'</p>';
         echo '<p>Catégorie 👕 : '.$value['article_categorie'].'</p>';
         echo '<p>Provenance 🌍 : '.$value['marque_nationalite'].'</p>';
@@ -402,11 +433,11 @@ function afficherResultatRecherche($mabd) {
     }
     foreach ($resultat as $value) {
         echo '<div class="article">'; 
-        echo '<img src="'.$value['article_photo'].'">';
+        echo '<img src="'.$value['article_photo'].'" alt="photoArticle">';
         echo '<div class="infos">';
         echo '<p>'.$value['article_nom'];
         echo '<h3>'.$value['article_prix'].'€</h3>';
-        echo '<img src="'.$value['article_couleur'].'">';
+        echo '<img src="'.$value['article_couleur'].'" alt="pastille">';
         echo '<div class="article_hover">';
         echo '<p>Marque : '.$value['marque_nom'].'</p>';
         echo '<p>Tailles disponible : '.$value['article_taille'].'</p>';

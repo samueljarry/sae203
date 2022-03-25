@@ -107,6 +107,10 @@
     <div id="formcategory">
         <label for="categorie">Catégorie :</label>
         <div id="categorie">
+        <div class="categoryrow">
+                <input type="radio" value="%" class="department" name="categorie">
+                <label for="tout">Tout</label>
+            </div>
             <div class="categoryrow">
                 <input type="radio" value="veste" class="department" name="categorie">
                 <label for="veste">Veste</label>
@@ -148,6 +152,11 @@
     <div id="formsize">
         <label for="taille">Taille</label>
         <div id="taille">
+
+            <div class="categoryrow">
+                <input type="radio" value="%" class="department" name="taille">
+                <label for="tout">Tout</label>
+            </div>
 
             <div class="categoryrow">
                 <input type="radio" id="S" value="S" name="taille" class="department">
